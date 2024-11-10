@@ -4,7 +4,9 @@ This Streamlit app allows users to analyze daily study hours data for students, 
 
 ---
 
-![App Preview](path/to/your/preview_image.png) <!-- Add a path to your image preview here -->
+![App Preview](public/preview1.png) 
+![App Preview](public/preview2.png) 
+![App Preview](public/preview3.png) 
 
 ---
 
