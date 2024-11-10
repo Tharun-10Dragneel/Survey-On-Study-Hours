@@ -85,6 +85,21 @@ if uploaded_file:
         fig = plot_study_hours(study_hours, mean_study_hours, confidence_interval)
         st.pyplot(fig)
 
+        # Hypothetical 2 hours study time
+        hypothetical_value = 2
+        st.write(f"### Comparison with Recommended Study Time: {hypothetical_value} hours")
+
+        if mean_study_hours < hypothetical_value:
+            st.write(f"The mean study time ({mean_study_hours:.2f} hours) is less than the recommended {hypothetical_value} hours of study per day.")
+        elif mean_study_hours > hypothetical_value:
+            st.write(f"The mean study time ({mean_study_hours:.2f} hours) is more than the recommended {hypothetical_value} hours of study per day.")
+        else:
+            st.write(f"The mean study time is exactly equal to the recommended {hypothetical_value} hours.")
+
+        # Reflection
+        st.write("### Reflection on Study Patterns")
+        st.write("Consider how your data compares to the recommended study time. Does it indicate that most students are under-studying or over-studying compared to the recommendation?")
+
     # End of file upload section
     st.markdown("</div>", unsafe_allow_html=True)
 

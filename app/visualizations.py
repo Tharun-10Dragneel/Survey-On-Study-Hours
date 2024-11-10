@@ -1,16 +1,25 @@
-# app/visualizations.py
 import matplotlib.pyplot as plt
-import pandas as pd
+import numpy as np
 
-def plot_study_hours(data: pd.Series, sample_mean: float, confidence_interval: tuple):
-    """Create a scatter plot of study hours with mean and confidence interval."""
-    n = len(data)
-    fig, ax = plt.subplots()
-    ax.scatter(range(1, n + 1), data, color='blue', label='Daily Study Hours')
-    ax.axhline(y=sample_mean, color='orange', linestyle='-', label='Sample Mean')
-    ax.fill_between(range(1, n + 1), confidence_interval[0], confidence_interval[1], color='lightgrey', alpha=0.4, label='90% Confidence Interval')
-    ax.set_title("Daily Study Hours of Students")
-    ax.set_xlabel("Student Number")
-    ax.set_ylabel("Daily Study Hours")
-    ax.legend()
+def plot_study_hours(study_hours, mean, confidence_interval):
+    # Create a scatter plot of study hours
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    ax.scatter(np.arange(len(study_hours)), study_hours, color='skyblue', label='Study Hours', alpha=0.6)
+
+    # Mark the sample mean with a red line
+    ax.axhline(mean, color='red', linestyle='--', label=f'Mean: {mean:.2f} hours')
+
+    # Shade the area between the confidence interval
+    ax.fill_between(np.arange(len(study_hours)), confidence_interval[0], confidence_interval[1], color='orange', alpha=0.3, label=f'90% Confidence Interval')
+
+    # Add labels and title
+    ax.set_title("Study Hours Distribution with Mean and Confidence Interval", fontsize=16)
+    ax.set_xlabel("Student Index", fontsize=14)
+    ax.set_ylabel("Study Hours (hours)", fontsize=14)
+
+    # Show legend
+    ax.legend(loc='upper right')
+
+    # Return the figure
     return fig
