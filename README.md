@@ -1,8 +1,3 @@
-# Survey-On-Study-Hours
-
-Here's a detailed `README.md` template you can use for your Streamlit app, including sections for project description, installation, setup, and preview.
-
-```markdown
 # Study Hours Analysis App 📊
 
 This Streamlit app allows users to analyze daily study hours data for students, including statistical insights, visualizations, and confidence interval calculations. Users can upload a CSV file with study hours data and interactively explore the analysis.
